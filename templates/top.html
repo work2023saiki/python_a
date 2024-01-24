@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+ 
+{% block title %}GAME{% endblock %}
+
+
+{% block header %}
+<h1>flask game
+<nav>
+    <ul>
+    <li class=”current”><a href=”#”>Home</a></li>
+    <li><a href=”#”>game</a></li>
+    <li><a href=”#”>About</a></li>
+    </ul>
+    </nav>
+</h1>
+
+<ul>
+    <li>
+    <a href="{{ url_for('puzzle')}}">15まで揃えろ</a>
+    </li>
+    <li>
+    <a href="{{ url_for('Shooting')}}"><img src="{{ url_for('static', filename='../static/images/ship.png') }}"><p>シューティングゲーム</p></a>
+    </li>
+    <li>
+    <a href="{{ url_for('Cards')}}"><img src="{{ url_for('static', filename='../static/images/card.png') }}"><p>Cards</p></a>
+    </li>
+</ul>
+<ul>
+    <li>
+    <a href="{{ url_for('Reversi')}}"><img src="{{ url_for('static', filename='../static/images/reversi.png') }}"><p>リバーシ</p></a>
+    </li>
+</ul>
+   
+
+{% endblock %}
+
+{% block content %}
+<div class="cherry-blossom"></div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
