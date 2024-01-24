@@ -1,0 +1,2 @@
+print("NAGATA")
+yuuki
