@@ -24,6 +24,18 @@ nav ul li{
     min-width: 60px;
     } 
 
+    ul {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+    li {
+      width: 45%;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+    }
     
     
  /* 桜を表示するコンテナのスタイル */
