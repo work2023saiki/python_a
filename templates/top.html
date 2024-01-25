@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+ 
+{% block title %}ねこたち{% endblock %}
+
+
+{% block header %}
+<h1>flask game
+<nav>
+    <ul>
+    <li class=”current”><a href=”#”>Home</a></li>
+    <li><a href=”#”>game</a></li>
+    <li><a href=”#”>About</a></li>
+    </ul>
+    </nav>
+</h1>
+
+<div class="game">
+    <a href="{{ url_for('puzzle')}}">15まで揃えろ</a>
+    <a href="{{ url_for('Shooting')}}">aa</a>
+</div>
+   
+
+{% endblock %}
+
+{% block content %}
+<div class="cherry-blossom"></div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
