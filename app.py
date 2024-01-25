@@ -24,6 +24,10 @@ def Cards():
 def Reversi():
     return render_template('ReversiblePiece.html')
 
+@app.route('/Dungeon') 
+def Dungeon():
+    return render_template('Dungeon.html')
+
 
 
 import os
