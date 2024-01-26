@@ -39,9 +39,6 @@ def Jumper():
 def CarryIt():
     return render_template('CarryIt.html')
 
-
-
-
-
+  
 if __name__ == '__main__':
     app.run()
