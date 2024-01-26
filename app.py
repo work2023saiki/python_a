@@ -31,6 +31,10 @@ def Dungeon():
 def FunkyBlocks():
     return render_template('FunkyBlocks.html')
 
+@app.route('/jumper') 
+def jumper():
+    return render_template('jumper.html')
+
 
 
 
