@@ -39,6 +39,10 @@ def Jumper():
 def CarryIt():
     return render_template('CarryIt.html')
 
+@app.route('/Billiard') 
+def CarryIt():
+    return render_template('Billiard.html')
+
 
 
 
