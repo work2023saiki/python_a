@@ -35,6 +35,10 @@ def FunkyBlocks():
 def Jumper():
     return render_template('Jumper.html')
 
+@app.route('/CarryIt') 
+def CarryIt():
+    return render_template('CarryIt.html')
+
 
 
 if __name__ == '__main__':
