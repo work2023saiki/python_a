@@ -1,8 +1,8 @@
-¬–Ú•W
-flask‚ðŽg‚Á‚ÄATOPƒy[ƒW‚©‚çƒŠƒ“ƒNuƒeƒgƒŠƒX‚Öv‚ðì¬‚µAƒŠƒ“ƒNæ‚ÅƒeƒgƒŠƒX‚ð‚ ‚»‚×‚é‚æ‚¤‚É‚·‚éB
-ƒ^ƒXƒN
-1.TOPƒy[ƒW‚ðHTMLƒtƒ@ƒCƒ‹‚Åì¬B–¼‘O‚Ítop.html‚ÅAurl_forŽg‚¤B
-2.app.py‚ðì¬Btetorisu.py‚ðƒCƒ“ƒ|[ƒgB
-3.ƒeƒgƒŠƒX‚ÌƒR[ƒh‚ðtetorisu.py‚É“\‚è•t‚¯
+ï¿½ï¿½ï¿½Ú•W
+flaskï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ÄATOPï¿½yï¿½[ï¿½Wï¿½ï¿½ï¿½çƒŠï¿½ï¿½ï¿½Nï¿½uï¿½eï¿½gï¿½ï¿½ï¿½Xï¿½Övï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½Åƒeï¿½gï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×‚ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½B
+ï¿½^ï¿½Xï¿½N
+1.TOPï¿½yï¿½[ï¿½Wï¿½ï¿½HTMLï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Åì¬ï¿½Bï¿½ï¿½ï¿½Oï¿½ï¿½top.htmlï¿½ÅAurl_forï¿½gï¿½ï¿½ï¿½B
+2.app.pyï¿½ï¿½ï¿½ì¬ï¿½Btetorisu.pyï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½|ï¿½[ï¿½gï¿½B
+3.ï¿½eï¿½gï¿½ï¿½ï¿½Xï¿½ÌƒRï¿½[ï¿½hï¿½ï¿½tetorisu.pyï¿½É“\ï¿½ï¿½tï¿½ï¿½
 
-test
+aaa

@@ -31,6 +31,11 @@ def Dungeon():
 def Vegitable():
     return render_template('VegitableMarch.html')
 
+@app.route('/FunkyBlocks') 
+def FunkyBlocks():
+    return render_template('FunkyBlocks.html')
+
+
 
 
 
