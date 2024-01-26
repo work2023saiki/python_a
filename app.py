@@ -31,9 +31,9 @@ def Dungeon():
 def FunkyBlocks():
     return render_template('FunkyBlocks.html')
 
-
-
-
+@app.route('/chase') 
+def chase():
+    return render_template('Chase.html')
 
 if __name__ == '__main__':
     app.run()
