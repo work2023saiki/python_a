@@ -355,9 +355,9 @@
   <header><a href="{{ url_for('index')}}">ホーム</a></header>
   <body onload="init()">
     <!-- Thanks to http://takao-suenobu.com/ & http://dova-s.jp/ -->
-    <audio src="Emergency.mp3" id="bgm" loop="loop"></audio>
+    <audio src="{{ url_for('static', filename='../static/images/Emergency.mp3') }}" id="bgm" loop="loop"></audio>
     <canvas id="maze" width="900" height="600"></canvas>
-    <img id="START" src="{{ url_for('static', filename='../static/images/start.png') }}" onclick="go()"><br>
+    <img id="START" src="{{ url_for('static', filename='../static/images/start1.png') }}" onclick="go()"><br>
     <img id="arrows" src="{{ url_for('static', filename='../static/images/arrows.png') }}" style="display: none">
 
     <img id="hero0" src="{{ url_for('static', filename='../static/images/hero0.png') }}" style="display: none">
