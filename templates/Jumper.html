@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <title>Jumper</title>
     <script>
+      class Shuriken {
+        constructor() {
+          this.x = 1000;
+          this.y = 100;
+          this.t = 0;
+        }
+        tick(){
+          this.x -= 10;
+          this.t -= 0.5;
+          if (this.x < -100){
+            this.x = 1000;
+            this.y = Math.random()*500;
+          }
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.t);
+          for (let i = 0 ; i < 4 ; i++){
+            ctx.rotate(Math.PI/2*i);
+            ctx.beginPath();
+            ctx.moveTo(0,-20)
+            ctx.lineTo(-5,0);
+            ctx.lineTo(5,0)
+            ctx.fill();
+          }
+          ctx.restore();
+        }
+      }
+
       class Jumper {
         // 棒人間クラス
         constructor() {
@@ -56,12 +84,13 @@
       }
 
       let ctx; // 描画コンテキスト
-      let jumper; // 主人公（忍者）
+      let jumper; // 主人公
       let power = 0; // ジャンプの力
       let timerId = NaN; // タイマー
       let isMouseDown = false; // マウス押下中か否か
       let boxes = [new Box(0, 350, 300)]; // 箱のリスト（最初の１つは設定）
       let back; // 背景画像
+      let shuriken = new Shuriken();
 
       onload = function () {
         jumper = new Jumper(100, 200); // 主人公（忍者）オブジェクト作成
@@ -98,7 +127,7 @@
         ctx.drawImage(back, 0, 0);
         ctx.fillStyle = "#000000";
         ctx.fillRect(0, 0, power, 15);
-        jumper.paint(); // 主人公（忍者）描画
+        jumper.paint(); // 棒人間描画
         boxes.forEach((b) => {
           if (!jumper.landed) {
             b.x -= 5; // ジャンプ中は箱を左へ移動
@@ -113,20 +142,24 @@
           clearInterval(timerId); // すべての箱を飛んだらクリア
           ctx.fillText("CLEAR !!!", 150, 300);
         }
+        shuriken.tick();
+        if (100 < shuriken.x && shuriken.x < 200 && jumper.y < shuriken.y && shuriken.y < jumper.y + 150){
+          clearInterval(timerId); // 落下時はゲームオーバー
+          ctx.fillText("Game Over", 150, 300);
+        }
       }
     </script>
   </head>
-  <header><a href="{{ url_for('index')}}">ホーム</a></header>
   <body>
     <canvas id="field" width="800" height="600"></canvas>
-    <img  src="{{ url_for('static', filename='../static/images/back2.png') }}" id="back" style="display: none">
-    <img  src="{{ url_for('static', filename='../static/images/stick0.png') }}" id="stick0" style="display: none">
-    <img  src="{{ url_for('static', filename='../static/images/stick1.png') }}" id="stick1" style="display: none">
-    <img  src="{{ url_for('static', filename='../static/images/stick2.png') }}" id="stick2" style="display: none">
-    <img  src="{{ url_for('static', filename='../static/images/stick3.png') }}" id="stick3" style="display: none">
-    <img  src="{{ url_for('static', filename='../static/images/stick4.png') }}" id="stick4" style="display: none">
-    <img  src="{{ url_for('static', filename='../static/images/stick5.png') }}" id="stick5" style="display: none">
-    <img  src="{{ url_for('static', filename='../static/images/stick6.png') }}" id="stick6" style="display: none">
-    <img  src="{{ url_for('static', filename='../static/images/stick7.png') }}" id="stick7" style="display: none">
+    <img id="back" src="{{ url_for('static', filename='/images/back2.png')}}"style="display: none">
+    <img id="stick0" src="{{ url_for('static', filename='/images/stick0.png')}}"style="display: none">
+    <img id="stick1" src="{{ url_for('static', filename='/images/stick1.png')}}"style="display: none">
+    <img id="stick2" src="{{ url_for('static', filename='/images/stick2.png')}}"style="display: none">
+    <img id="stick3" src="{{ url_for('static', filename='/images/stick3.png')}}"style="display: none">
+    <img id="stick4" src="{{ url_for('static', filename='/images/stick4.png')}}"style="display: none">
+    <img id="stick5" src="{{ url_for('static', filename='/images/stick5.png')}}"style="display: none">
+    <img id="stick6" src="{{ url_for('static', filename='/images/stick6.png')}}"style="display: none">
+    <img id="stick7" src="{{ url_for('static', filename='/images/stick7.png')}}"style="display: none">
   </body>
 </html>
