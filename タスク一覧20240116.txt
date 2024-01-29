@@ -1,0 +1,8 @@
+小目標
+flaskを使って、TOPページからリンク「テトリスへ」を作成し、リンク先でテトリスをあそべるようにする。
+タスク
+1.TOPページをHTMLファイルで作成。名前はtop.htmlで、url_for使う。
+2.app.pyを作成。tetorisu.pyをインポート。
+3.テトリスのコードをtetorisu.pyに貼り付け
+
+aaa
