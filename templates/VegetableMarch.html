@@ -15,7 +15,7 @@
         top: 200px;
       }
     </style>
-    <script src="Tiny2D.js"></script>
+    <script src="{{ url_for('static', filename='../static/scripts/VegetableMarch/Tiny2D.js') }}"></script>
     <script>
       "use strict";
 
@@ -234,16 +234,17 @@
       }
     </script>
   </head>
+  <header><a href="{{ url_for('index')}}">ホーム</a></header>
   <body onload="init()">
     <!-- Thanks to http://takao-suenobu.com/  & http://dova-s.jp/ -->
     <audio src="bgm.mp3" id="bgm"></audio>
     <canvas id="canvas" width="800" height="600"></canvas>
-    <img id="START" src="start.png" onclick="go()">
-    <img id="fruitbg" src="fruitbg.png" style="display: none">
-    <img id="fruit0" src="fruit0.png" style="display: none">
-    <img id="fruit1" src="fruit1.png" style="display: none">
-    <img id="fruit2" src="fruit2.png" style="display: none">
-    <img id="fruit3" src="fruit3.png" style="display: none">
-    <img id="fruit4" src="fruit4.png" style="display: none">
+    <img id="START" src="{{ url_for('static', filename='../static/images/VegetableMarch/start.png') }}" onclick="go()">
+    <img id="fruitbg" src="{{ url_for('static', filename='../static/images/VegetableMarch/bgm.mp3') }}" style="display: none">
+    <img id="fruit0" src="{{ url_for('static', filename='../static/images/VegetableMarch/fruit0.png') }}" style="display: none">
+    <img id="fruit1" src="{{ url_for('static', filename='../static/images/VegetableMarch/fruit1.png') }}" style="display: none">
+    <img id="fruit2" src="{{ url_for('static', filename='../static/images/VegetableMarch/fruit2.png') }}" style="display: none">
+    <img id="fruit3" src="{{ url_for('static', filename='../static/images/VegetableMarch/fruit3.png') }}" style="display: none">
+    <img id="fruit4" src="{{ url_for('static', filename='../static/images/VegetableMarch/fruit4.png') }}" style="display: none">
   </body>
 </html>
