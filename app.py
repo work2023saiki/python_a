@@ -52,7 +52,13 @@ def EggCatch():
     return render_template('EggCatch.html')
 
 
+@app.route('/chase') 
+def chase():
+    return render_template('Chase.html')
 
+@app.route('/Billiard') 
+def chase():
+    return render_template('Billiard.html')
 
 if __name__ == '__main__':
     app.run()
