@@ -31,9 +31,17 @@ def Dungeon():
 def FunkyBlocks():
     return render_template('FunkyBlocks.html')
 
-@app.route('/jumper') 
-def jumper():
-    return render_template('jumper.html')
+
+  
+@app.route('/Jumper') 
+def Jumper():
+    return render_template('Jumper.html')
+
+@app.route('/CarryIt') 
+def CarryIt():
+    return render_template('CarryIt.html')
+
+  
 
 @app.route('/saturnvoyager') 
 def saturnvoyager():
@@ -42,8 +50,6 @@ def saturnvoyager():
 @app.route('/EggCatch') 
 def EggCatch():
     return render_template('EggCatch.html')
-
-
 
 
 
