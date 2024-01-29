@@ -47,6 +47,11 @@ def CarryIt():
 def saturnvoyager():
     return render_template('saturnvoyager.html')
 
+@app.route('/EggCatch') 
+def EggCatch():
+    return render_template('EggCatch.html')
+
+
 @app.route('/chase') 
 def chase():
     return render_template('Chase.html')
