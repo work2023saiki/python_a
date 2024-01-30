@@ -27,9 +27,6 @@ def Reversi():
 def Dungeon():
     return render_template('Dungeon.html')
 
-@app.route('/Vegitable') 
-def Vegitable():
-    return render_template('VegitableMarch.html')
 
 @app.route('/FunkyBlocks') 
 def FunkyBlocks():
