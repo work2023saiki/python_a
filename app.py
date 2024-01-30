@@ -57,8 +57,12 @@ def chase():
     return render_template('Chase.html')
 
 @app.route('/Billiard') 
-def chase():
+def Billiard():
     return render_template('Billiard.html')
+
+@app.route('/yasai') 
+def yasai():
+    return render_template('yasai.html')
 
 if __name__ == '__main__':
     app.run()
