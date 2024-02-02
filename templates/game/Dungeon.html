@@ -355,18 +355,18 @@
   <header><a href="{{ url_for('index')}}">ホーム</a></header>
   <body onload="init()">
     <!-- Thanks to http://takao-suenobu.com/ & http://dova-s.jp/ -->
-    <audio src="{{ url_for('static', filename='../static/images/Emergency.mp3') }}" id="bgm" loop="loop"></audio>
+    <audio src="{{ url_for('static', filename='../static/images/Dungeon/Emergency.mp3') }}" id="bgm" loop="loop"></audio>
     <canvas id="maze" width="900" height="600"></canvas>
-    <img id="START" src="{{ url_for('static', filename='../static/images/start1.png') }}" onclick="go()"><br>
-    <img id="arrows" src="{{ url_for('static', filename='../static/images/arrows.png') }}" style="display: none">
+    <img id="START" src="{{ url_for('static', filename='../static/images/Dungeon/start1.png') }}" onclick="go()"><br>
+    <img id="arrows" src="{{ url_for('static', filename='../static/images/Dungeon/arrows.png') }}" style="display: none">
 
-    <img id="hero0" src="{{ url_for('static', filename='../static/images/hero0.png') }}" style="display: none">
-    <img id="hero1" src="{{ url_for('static', filename='../static/images/hero1.png') }}"style="display: none">
-    <img id="hero2" src="{{ url_for('static', filename='../static/images/hero2.png') }}" style="display: none">
-    <img id="hero3" src="{{ url_for('static', filename='../static/images/hero3.png') }}" style="display: none">
-    <img id="alien0" src="{{ url_for('static', filename='../static/images/alien0.png') }}" style="display: none">
-    <img id="alien1" src="{{ url_for('static', filename='../static/images/alien1.png') }}" style="display: none">
-    <img id="alien2" src="{{ url_for('static', filename='../static/images/alien2.png') }}"style="display: none">
-    <img id="alien3" src="{{ url_for('static', filename='../static/images/alien3.png') }}" style="display: none">
+    <img id="hero0" src="{{ url_for('static', filename='../static/images/Dungeon/hero0.png') }}" style="display: none">
+    <img id="hero1" src="{{ url_for('static', filename='../static/images/Dungeon/hero1.png') }}"style="display: none">
+    <img id="hero2" src="{{ url_for('static', filename='../static/images/Dungeon/hero2.png') }}" style="display: none">
+    <img id="hero3" src="{{ url_for('static', filename='../static/images/Dungeon/hero3.png') }}" style="display: none">
+    <img id="alien0" src="{{ url_for('static', filename='../static/images/Dungeon/alien0.png') }}" style="display: none">
+    <img id="alien1" src="{{ url_for('static', filename='../static/images/Dungeon/alien1.png') }}" style="display: none">
+    <img id="alien2" src="{{ url_for('static', filename='../static/images/Dungeon/alien2.png') }}"style="display: none">
+    <img id="alien3" src="{{ url_for('static', filename='../static/images/Dungeon/alien3.png') }}" style="display: none">
   </body>
 </html>
