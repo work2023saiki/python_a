@@ -25,6 +25,8 @@ def touroku():
     form = RegisterForm()     #ファイルforms.pyのRegisterFormクラスからオブジェクトを作る
     # POST
     if form.validate_on_submit():    #validatorsの内容が表示されないなら、
+        session['name'] = form.name.data           #セッションとして保存。登録完了ページで使う。
+        session['password'] = form.password.data     
         
         return redirect(url_for('tourokuOK'))   #redirectとすることで、ユーザー名、パスワードの二重送信を防ぐ。PRGパターンのR。
     
