@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, redirect, url_for
-from forms import InputForm, InputForm2 
+from forms import LoginForm, RegisterForm
 
 app = Flask(__name__)
 
@@ -11,9 +11,9 @@ app.config['SECRET_KEY'] = os.urandom(24)
 #ログイン
 @app.route('/', methods=['GET', 'POST'])
 def login():
-    form2 = InputForm2()      #ファイルforms.pyのInputForm2クラスからオブジェクトを作る
+    form2 = LoginForm()      #ファイルforms.pyのLoginFormクラスからオブジェクトを作る
     # POST
-    if form2.validate_on_submit():    #InputForm2クラス、validatorsの内容が表示されないなら、
+    if form2.validate_on_submit():    #validatorsの内容が表示されないなら、
         
         return redirect(url_for('top'))     #redirectとすることで、ユーザー名、パスワードの二重送信を防ぐ。
     # GETリクエストで、ifが通らなかった場合。form2オブジェクトを引数としてformにわたす。
@@ -22,17 +22,17 @@ def login():
 # 登録
 @app.route('/touroku', methods=['GET', 'POST'])
 def touroku():
-    form = InputForm()     #ファイルforms.pyのInputFormクラスからオブジェクトを作る
+     form = RegisterForm()     #ファイルforms.pyのRegisterFormクラスからオブジェクトを作る
     # POST
-    if form.validate_on_submit():    #InputFormクラス、validatorsの内容が表示されないなら、
-        session['name'] = form.name.data           #セッションとして保存。他のページに移動してもsession['name']の中身はそのまま。
+     if form.validate_on_submit():    #validatorsの内容が表示されないなら、
+        session['name'] = form.name.data           #セッションとして保存。登録完了ページで使う。
         session['password'] = form.password.data     
         session['confirm_password'] = form.confirm_password.data
         
         return redirect(url_for('tourokuOK'))   #redirectとすることで、ユーザー名、パスワードの二重送信を防ぐ。PRGパターンのR。
     
     # GETリクエストで、ifが通らなかった場合。formオブジェクトを引数としてformにわたす。
-    return render_template('touroku.html', form=form)
+     return render_template('touroku.html', form=form)
 
 # 登録完了画面
 @app.route('/tourokuOK')
