@@ -19,3 +19,4 @@ class RegisterForm(LoginForm):   #ログイン画面のLoginFormクラスを継�
     confirm_password = PasswordField('パスワード確認：', validators=[EqualTo('password', "パスワードが一致しません")])
     
     submit = SubmitField('送信')   #送信ボタン  オーバーライドしてる
+

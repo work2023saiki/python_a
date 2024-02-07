@@ -13,8 +13,7 @@ app.config['SECRET_KEY'] = os.urandom(24)
 def login():
     form2 = LoginForm()      #ファイルforms.pyのLoginFormクラスからオブジェクトを作る
     # POST
-    if form2.validate_on_submit():    #validatorsの内容が表示されないなら、
-        
+    if form2.validate_on_submit():    #validatorsの内容が表示されないなら、  
         return redirect(url_for('top'))     #redirectとすることで、ユーザー名、パスワードの二重送信を防ぐ。
     # GETリクエストで、ifが通らなかった場合。form2オブジェクトを引数としてformにわたす。
     return render_template('login.html', form=form2)    #ログイン画面へ
@@ -22,17 +21,17 @@ def login():
 # 登録
 @app.route('/touroku', methods=['GET', 'POST'])
 def touroku():
-     form = RegisterForm()     #ファイルforms.pyのRegisterFormクラスからオブジェクトを作る
+    form = RegisterForm()     #ファイルforms.pyのRegisterFormクラスからオブジェクトを作る
+        #ファイルforms.pyのRegisterFormクラスからオブジェクトを作る
     # POST
-     if form.validate_on_submit():    #validatorsの内容が表示されないなら、
+    if form.validate_on_submit():    #validatorsの内容が表示されないなら、
         session['name'] = form.name.data           #セッションとして保存。登録完了ページで使う。
         session['password'] = form.password.data     
-        session['confirm_password'] = form.confirm_password.data
         
         return redirect(url_for('tourokuOK'))   #redirectとすることで、ユーザー名、パスワードの二重送信を防ぐ。PRGパターンのR。
     
     # GETリクエストで、ifが通らなかった場合。formオブジェクトを引数としてformにわたす。
-     return render_template('touroku.html', form=form)
+    return render_template('touroku.html', form=form)
 
 # 登録完了画面
 @app.route('/tourokuOK')
