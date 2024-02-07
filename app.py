@@ -1,15 +1,19 @@
+import os    # 乱数を設定するためインポート
 from flask import Flask, render_template, session, redirect, url_for
 from forms import LoginForm, RegisterForm
 
 app = Flask(__name__)
 
-import os    # 乱数を設定するためインポート
+
 # 乱数を設定
 app.config['SECRET_KEY'] = os.urandom(24)
 
+@app.route("/")
+def hello():
+    return render_template("index.html")
 
 #ログイン
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form2 = LoginForm()      #ファイルforms.pyのLoginFormクラスからオブジェクトを作る
     # POST
