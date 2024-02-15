@@ -104,3 +104,4 @@ def yasai():
 
 if __name__ == '__main__':
     app.run()
+    #   app.run(debug=False, host='192.168.1.108', port=50004)
