@@ -1,19 +1,30 @@
 {% extends "base.html" %}
  
-{% block title %}GAME{% endblock %}
-
+{% block title %}Game Site{% endblock %}
 
 {% block header %}
-<h1>flask game
-<nav>
-    <ul>
-    <li class="current"><a href="#">Home</a></li>
-    <li><a href="#">game</a></li>
-    <li><a href="#">About</a></li>
+<header>
+    <div class="header_wrapper">
+        <h1>
+            <a href="#">GAMES site.</a>
+            <span>たくさん遊べる<br>ゲームサイト</span>
+        </h1>
+    </div>
+</header>
+
+
+
+<!-- ナビゲーション -->
+<nav class="gnav">
+    <ul class="gnav_wrapper">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Top</a></li>
     </ul>
 </nav>
-</h1>
+{% endblock %}
 
+{% block content %}
 <ul>
     <li>
     <a href="{{ url_for('puzzle')}}"><img src="{{ url_for('static', filename='../static/images/15puzzle/15.png') }}"><p>15まで揃えろ</p></a>
@@ -64,12 +75,11 @@
     </li>
 </ul>
 
-{% endblock %}
-
-{% block content %}
 <div class="cherry-blossom"></div>
 
 {% endblock %}
 
-{% block footer %}{% endblock %}
+{% block footer %}
+<script type="text/javascript" src="{{ url_for('static', filename='../static/scripts/main.js')}}"></script>
+{% endblock %}
 

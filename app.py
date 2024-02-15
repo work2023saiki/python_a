@@ -33,16 +33,9 @@ def load_user(user_id):
 
 
 
-@app.route("/")
-def hello():
-    return render_template("index.html")
-
-
-@app.route('/top')
-@login_required
-def top():
-    return render_template('top.html')    
-
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/puzzle')
 @login_required 
@@ -69,25 +62,20 @@ def Reversi():
 def Dungeon():
     return render_template('game/Dungeon.html')
 
-
 @app.route('/FunkyBlocks')
 @login_required 
 def FunkyBlocks():
     return render_template('game/FunkyBlocks.html')
 
-
-  
 @app.route('/Jumper')
 @login_required 
 def Jumper():
-    return render_template('game/Jumper.html')
+    return render_template('game/jumper.html')
 
 @app.route('/CarryIt')
 @login_required 
 def CarryIt():
     return render_template('game/CarryIt.html')
-
-  
 
 @app.route('/saturnvoyager')
 @login_required 
@@ -98,7 +86,6 @@ def saturnvoyager():
 @login_required 
 def EggCatch():
     return render_template('game/EggCatch.html')
-
 
 @app.route('/chase')
 @login_required 
