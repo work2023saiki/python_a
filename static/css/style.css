@@ -5,6 +5,13 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
 /* ヘッダー */
 header{
   width: 100%;
@@ -35,7 +42,7 @@ header{
   line-height: 1.5;
   margin-left: 10px;
 }
-/* ナビゲーション */
+/* ナビゲーション gnav */
 .gnav{
   width: 100%;
   background-color: #333;
@@ -64,6 +71,84 @@ header{
   text-decoration: none;
 }
 
+/*　画像の拡大＋テキスト出現 zoomInText　*/
+
+.zoomInText{ /* テキストの基点となる位置を定義 */
+  position: relative;
+}
+.zoomInText span.mask{
+  position: relative;
+  transition: .3s ease-in-out; /* 移り変わる速さ */
+  display: block; /* 画像spanタグをブロック要素に */
+  line-height: 0; /* 行の高さを0にする */
+  overflow:hidden; /* 拡大してはみ出る要素を隠す */
+}
+
+.zoomInText:hover span.mask::before{ /* hoverした時の変化 */
+  content:"";
+  position: absolute;
+  z-index:2;
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  background:rgba(0,0,0,0.5); /* 背景色 */
+}
+
+.zoomInText img{
+  transform: scale(1);
+  filter: blur(0);
+  transition: .3s ease-in-out; /* 移り変わる速さ */
+}
+
+.zoomInText:hover img{ /* hoverした時の変化 */
+  transform: scale(1.2); /* 拡大の値 */
+  filter: blur(2px); /* ぼかし具合 */
+}
+
+.zoomInText span.cap{
+  opacity:0;
+  transition: .5s ease-in-out; /* 移り変わる速さ */
+  position: absolute;
+  z-index:3; /* テキストを前面に出す*/
+  top: 100px;
+  left: 100px;
+  transform: translate(-50%,-50%);
+  color: #fff; /*テキストの色*/
+  line-height: 1.5; /*行の高さ*/
+}
+
+.zoomInText:hover span.cap{ /*hoverした時の変化*/
+  opacity:1;
+}
+
+
+/*========= レイアウトCSS ===============*/
+
+a{
+  color: #333;
+  text-decoration: none;
+}
+
+.lead{
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/*画像のレスポンシブ*/
+
+img{
+  width:200px;/* 画像差し替え後100%へ */
+  height:200px;/* 画像差し替え後autoへ */
+}
+
+
+/*　横幅　*/
+
+.zoomInText{
+  width: 200px;
+  margin: 0 auto;/*中央揃え*/
+}
+
+
 h1 {
   padding: 1rem 3rem;
   -webkit-transform: skew(-15deg);
@@ -84,11 +169,7 @@ h1 {
     li {
       width: 45%;
     }
-    img {
-      width: 200px;
-      height: 200px;
-    }
-    
+
     
  /* 桜を表示するコンテナのスタイル */
  .cherry-blossom-container {

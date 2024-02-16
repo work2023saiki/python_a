@@ -1,21 +1,23 @@
-{% extends "baseForm.html" %}
+{% extends "forms/baseForm.html" %}
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/formstyle.css') }}">
-
-
-{% block title %}
-    <h1>ログイン</h1>
-{% endblock %}
+{% block title %} ログイン {% endblock %}
 
 {% block content %}
-    {% from "_formhelpers.html" import render_field %}   <!--_formhelpers.htmlからrender_field関数を使うためインポート-->
-    <form method="POST" novalidate>     <!--ファイルapp.pyのPOSTのために設定-->
-        {{ form.csrf_token }}     <!--csrf攻撃対策としてトークンを使う。-->
-        {{ render_field(form.name) }}     <!--render_field関数の引数に、form.name2を入れている。formはapp.pyのrender_template内にあるformのこと。-->
+    {% from "forms/_formhelpers.html" import render_field %}   <!--_formhelpers.htmlからインポート-->
+    <form method="POST"  novalidate>     <!--app.pyのPOSTのため-->
+        {{ form.hidden_tag() }}     <!--CSRFの対策として設定-->
+        {{ render_field(form.name) }}     <!--formはapp.pyのrender_template内にあるform-->
         {{ render_field(form.password) }}
         
+
+        {% for message in get_flashed_messages() %}  <!--app.pyのlogin_manager.login_messageの中身、flashの中身を表示-->
+        <div style="color: blue;">
+            {{ message }}
+        </div>
+        {% endfor %}
+
         <br>
-        {{ form.submit() }}  <!--submit2はファイルforms.pyのInputForm2クラス内にある変数。「ログイン」ボタンを表示。-->
-        <a href="{{ url_for('touroku') }}">登録していない方はこちらへ</a>
+        {{ form.submit() }}  
+        <a href="{{ url_for('auth.touroku') }}">登録していない方はこちらへ</a>
     </form>
 {% endblock %}
