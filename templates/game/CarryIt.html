@@ -93,7 +93,13 @@
       }
     </script>
   </head>
-  <header><a href="{{ url_for('index')}}">ホーム</a></header>
+  <header>
+    <ahref="{{url_for('index')}}">ホーム</a>
+    <p>
+    上下左右キーで配達員を操作して黄色い地点まで荷物を運ぼう！<br>
+    この配達員、1つずつしか持てないし押すことしかできないよ
+    </p>
+  </header>
   <body onload="init()">
     <canvas id="soko" width="800" height="440"></canvas>
     <table>

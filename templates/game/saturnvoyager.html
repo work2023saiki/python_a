@@ -171,6 +171,13 @@
       }
     </script>
   </head>
+  <header>
+    <ahref="{{url_for('index')}}">ホーム</a>
+    <p>
+    上下左右キーか、マウスクリック長押しで機体を操り隕石を避けよう<br>
+    あなたは何秒持ち堪えられるか？！
+    </p>
+  </header>
   <body onload="init()">
     <!-- Thanks to http://takao-suenobu.com/  & http://dova-s.jp/ -->
     <audio src="{{ url_for('static', filename='/images/SaturnVoyager/Escape.mp3')}}"Escape.mp3 id="bgm" loop="loop"></audio>

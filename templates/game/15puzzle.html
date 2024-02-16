@@ -24,7 +24,15 @@
         background-color: black;
       }
     </style>
-    <header><a href="{{ url_for('index')}}">ホーム</a></header>
+    <header>
+      <a href="{{ url_for('index')}}">ホーム</a>
+      <p>
+        <font color="white">
+        白タイルに隣接したタイルをクリックすると入れ替わります<br>
+        ランダムに並んだ状態から1～15の順に整列させましょう
+        </font>
+      </p>
+    </header>
 
     <script>
       "use strict";

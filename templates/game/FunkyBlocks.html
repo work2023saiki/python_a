@@ -371,7 +371,13 @@
       }
     </script>
   </head>
-  <header><a href="{{ url_for('index')}}">ホーム</a></header>
+  <header>
+    <ahref="{{url_for('index')}}">ホーム</a>
+    <p>
+    ブロックを上下左右にクリック&ドラッグし、同じ色を3つ以上並べて消そう<br>
+    短時間に連続して消すと連鎖モードに突入！さらにスコアが加算！！制限時間は70秒
+    </p>
+  </header>
   <body onload="init()">
     <!-- Thanks to http://takao-suenobu.com/  & http://dova-s.jp/ -->
     <audio src="{{ url_for('static', filename='../static/images/Blocks/sound.mp3') }}" id="sound"></audio>

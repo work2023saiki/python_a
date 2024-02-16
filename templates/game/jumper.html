@@ -150,6 +150,13 @@
       }
     </script>
   </head>
+  <header>
+    <ahref="{{url_for('index')}}">ホーム</a>
+    <p>
+    ジャンプ特化型忍者を操ってゴールにたどり着ければ任務完了！<br>
+    マウスの押下時間に応じて飛距離が変わるぞ
+    </p>
+  </header>
   <body>
     <canvas id="field" width="800" height="600"></canvas>
     <img id="back" src="{{ url_for('static', filename='/images/jumper/back2.png')}}"style="display: none">
