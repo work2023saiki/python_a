@@ -38,22 +38,22 @@ def index():
     return render_template('index.html')
 
 @app.route('/puzzle')
-@login_required     #ログインしてたらゲームのページに行けるよう設定
+#@login_required     #ログインしてたらゲームのページに行けるよう設定
 def puzzle():
     return render_template('game/15puzzle.html')
 
 @app.route('/Shooting')
-@login_required 
+#@login_required 
 def Shooting():
     return render_template('game/Shooting.html')
 
 @app.route('/Cards')
-@login_required 
+#@login_required 
 def Cards():
     return render_template('game/FlipCards.html')
 
 @app.route('/reversi')
-@login_required 
+#@login_required 
 def Reversi():
     return render_template('game/ReversiblePiece.html')
 
@@ -63,42 +63,42 @@ def Dungeon():
     return render_template('game/Dungeon.html')
 
 @app.route('/FunkyBlocks')
-@login_required 
+#@login_required 
 def FunkyBlocks():
     return render_template('game/FunkyBlocks.html')
 
 @app.route('/Jumper')
-@login_required 
+#@login_required 
 def Jumper():
     return render_template('game/jumper.html')
 
 @app.route('/CarryIt')
-@login_required 
+#@login_required 
 def CarryIt():
     return render_template('game/CarryIt.html')
 
 @app.route('/saturnvoyager')
-@login_required 
+#@login_required 
 def saturnvoyager():
     return render_template('game/saturnvoyager.html')
 
 @app.route('/EggCatch')
-@login_required 
+#@login_required 
 def EggCatch():
     return render_template('game/EggCatch.html')
 
 @app.route('/chase')
-@login_required 
+#@login_required 
 def chase():
     return render_template('game/Chase.html')
 
 @app.route('/Billiard')
-@login_required 
+#@login_required 
 def Billiard():
     return render_template('game/Billiard.html')
 
 @app.route('/yasai')
-@login_required 
+#@login_required 
 def yasai():
     return render_template('game/yasai.html')
 
