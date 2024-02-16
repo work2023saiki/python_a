@@ -13,6 +13,12 @@
         {% block header %}{% endblock %}
     </header>
 
+
+    {% if current_user.is_authenticated %}         <!--ログインしてたら表示-->
+        <a href="{{ url_for('auth.logout') }}">ログアウト</a>
+    {% endif %}
+
+    
     {% block content %}{% endblock %}
 
     <footer>
