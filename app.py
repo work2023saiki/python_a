@@ -38,7 +38,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/puzzle')
-@login_required 
+@login_required     #ログインしてたらゲームのページに行けるよう設定
 def puzzle():
     return render_template('game/15puzzle.html')
 
@@ -104,4 +104,5 @@ def yasai():
 
 if __name__ == '__main__':
     app.run()
+    #公開サーバー用↓
     #   app.run(debug=False, host='192.168.1.108', port=50004)
