@@ -1,19 +1,19 @@
 {% extends "base.html" %}
  
-{% block title %}Game Site{% endblock %}
+{% block title %}GAME{% endblock %}
+
 
 {% block header %}
 <h1>flask game
 <nav>
     <ul>
-    <li><a href="login">ログイン</a></li>
-    <li><a href="#">game</a></li>
-    <li><a href="#">About</a></li>
+    <li class=”current”><a href=”#”>Home</a></li>
+    <li><a href=”#”>game</a></li>
+    <li><a href=”#”>About</a></li>
     </ul>
-</nav>
-{% endblock %}
+    </nav>
+</h1>
 
-{% block content %}
 <ul>
     <li>
     <a href="{{ url_for('puzzle')}}"><img src="{{ url_for('static', filename='../static/images/15puzzle/15.png') }}"><p>15まで揃えろ</p></a>
@@ -64,10 +64,14 @@
     </li>
 </ul>
 
+   
+
+{% endblock %}
+
+{% block content %}
 <div class="cherry-blossom"></div>
 
 {% endblock %}
 
-{% block footer %}
-<script type="text/javascript" src="{{ url_for('static', filename='../static/scripts/main.js')}}"></script>
-{% endblock %}
+{% block footer %}{% endblock %}
+
