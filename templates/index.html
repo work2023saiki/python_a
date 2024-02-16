@@ -3,23 +3,12 @@
 {% block title %}Game Site{% endblock %}
 
 {% block header %}
-<header>
-    <div class="header_wrapper">
-        <h1>
-            <a href="#">GAME Site.</a>
-            <span>たくさん遊べる<br>ゲームサイト</span>
-        </h1>
-    </div>
-</header>
-
-
-
-<!-- ナビゲーション -->
-<nav class="gnav">
-    <ul class="gnav_wrapper">
-        <li><a href="#">About</a></li>
-        <li><a href="{{ url_for('auth.login')}}">Login</a></li>
-        <li><a href="#">Top</a></li>
+<h1>flask game
+<nav>
+    <ul>
+    <li><a href="login">ログイン</a></li>
+    <li><a href="#">game</a></li>
+    <li><a href="#">About</a></li>
     </ul>
 </nav>
 {% endblock %}

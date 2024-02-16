@@ -13,6 +13,11 @@
         {% block header %}{% endblock %}
     </header>
 
+<<<<<<< HEAD
+    {% block content %}{% endblock %}
+
+    
+=======
 
     {% if current_user.is_authenticated %}         <!--ログインしてたら表示-->
         <a href="{{ url_for('auth.logout') }}">ログアウト</a>
@@ -21,9 +26,14 @@
     
     {% block content %}{% endblock %}
 
+>>>>>>> 40481eada68ce37bfe632a6b06b28dd8bc29040a
     <footer>
         {% block footer %}
         {% endblock %} 
     </footer> 
+<<<<<<< HEAD
+ 
+=======
+>>>>>>> 40481eada68ce37bfe632a6b06b28dd8bc29040a
 </body>
 </html>
