@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends "baseForm.html" %}
 
 {% block title %}
@@ -16,22 +15,3 @@
         {{ form.submit() }}  <!--submitはファイルforms.pyのInputFormクラス内にある変数。「送信」ボタンを表示。-->
     </form>
 {% endblock %}
-=======
-{% extends "forms/baseForm.html" %}
-
-{% block title %} ユーザー登録 {% endblock %}
-
-{% block content %}
-    {% from "forms/_formhelpers.html" import render_field %}   <!--_formhelpers.htmlからインポート-->
-    <form method="POST" novalidate>
-        {{ form.hidden_tag() }}          
-        {{ render_field(form.name) }}    
-        {{ render_field(form.password) }}
-        {{ render_field(form.confirm_password) }}
-        
-        <br>
-        {{ form.submit() }}
-    </form>
-
-{% endblock %}
->>>>>>> 40481eada68ce37bfe632a6b06b28dd8bc29040a
