@@ -352,7 +352,13 @@
       }
     </script>
   </head>
-  <header><a href="{{ url_for('index')}}">ホーム</a></header>
+  <header>
+    <ahref="{{url_for('index')}}">ホーム</a>
+    <p>
+    上下左右キーで主人公を動かして迷路右下のゴールを目指そう<br>
+    恐ろしいモンスターが現れるかも・・・気を付けて
+    </p>
+  </header>
   <body onload="init()">
     <!-- Thanks to http://takao-suenobu.com/ & http://dova-s.jp/ -->
     <audio src="{{ url_for('static', filename='../static/images/Dungeon/Emergency.mp3') }}" id="bgm" loop="loop"></audio>
