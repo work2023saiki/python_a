@@ -1,5 +1,6 @@
 {% macro render_field(field) %}       <!--関数を定義-->
-    <dt>{{ field.label }}        <!--（「名前：」などのラベル）-->
+<div>
+    <dt>{{ field.label }}</dt>     <!--（「名前：」などのラベル）-->
     <dd>{{ field(**kwargs)|safe }}   <!--入力欄-->
     {% if field.errors %}      <!--もしバリデーションエラーが出たら-->
         <ul style="color: red;">
@@ -9,4 +10,5 @@
         </ul>
     {% endif %}
     </dd>
+</div>
 {% endmacro %}
