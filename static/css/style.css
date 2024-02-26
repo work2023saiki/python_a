@@ -1,15 +1,210 @@
-
+/*===== 画面全体 =====*/
 body{
   letter-spacing: 0.1em;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
-table {
-  margin-left: auto;
-  margin-right: auto;
+.cont{
+  width: 90%;
+  margin: 0 auto;/* 中央寄せ */
 }
 
+/*===== 画面の幅が小さければclass指定で折り返す処理 =====*/
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 4px;
+}
+
+.item {
+  height: 200px;
+  padding: 24px;
+}
+
+/*===== ナビゲーションドロップダウン =====*/
+/*=== ナビゲーション全体の設定 ===*/
+nav{
+  background:#333;
+  color:#fff;
+  text-align: center;
+}
+/* ナビゲーション横並びに */
+nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+/* 2階層目は横並びにしない */
+nav ul ul{
+  display: block;
+}
+
+/*下の階層のulや矢印の基点にするためliにrelativeを指定*/
+nav ul li{
+  position: relative;
+}
+/*ナビゲーションのリンク設定*/
+nav ul li a{
+  display: block;
+  text-decoration: none;
+  color: #999;
+  padding:20px 35px;
+  transition:all .3s;
+}
+nav ul li li a{
+  padding:10px 35px;
+}
+nav ul li a:hover{
+  color:#fff;
+  background-color: #888888;
+  font-weight: bold;
+}
+
+/*=== 矢印の設定 ===*/
+
+/* 2階層目を持つliの矢印の設定 */
+nav ul li.gnav::before{
+  content:'';
+  position: absolute;
+  left:15px;
+  top:25px;
+  width:6px;
+  height:6px;
+  border-top: 2px solid #999;
+  border-right:2px solid #999;
+  transform: rotate(135deg);
+}
+
+
+/*=== 2階層目の設定 ===*/
+
+/*下の階層を持っているulの指定*/
+nav li.gnav ul{
+  margin: 0; /* デフォルトの余白をリセット */
+  padding: 0; /* デフォルトの余白をリセット */
+  position: absolute; /* 絶対配置で位置を指定 */
+  left:0;
+  top:62px;
+  z-index: 4; /*形状を指定*/
+  background:#209cff;
+  width:180px;
+  visibility: hidden;/*はじめは非表示*/
+  opacity: 0;
+  transition: all .3s;/*アニメーション設定*/
+}
+
+/*hoverしたら表示*/
+nav li.gnav:hover > ul,
+nav li.gnav ul li:hover > ul,
+nav li.gnav:active > ul,
+nav li.gnav ul li:active > ul{
+  visibility: visible;
+  opacity: 1;
+}
+
+/*ナビゲーションaタグの形状*/
+nav li.gnav ul li a{
+  color: #fff;
+  border-bottom:solid 1px rgba(255,255,255,0.6);
+}
+
+nav li.gnav ul li:last-child > a{
+ border-bottom:none;
+}
+
+nav li.gnav ul li a:hover,
+nav li.gnav ul li a:active{
+  background:#68e0cf;
+}
+
+/*=== 768px以下 nav・gnav内 ===*/
+
+@media screen and (max-width:768px){
+  nav{
+    padding: 0;
+  }
+  
+  nav ul{
+    display: block;
+    margin: 0; /* デフォルトの余白をリセット */
+    padding: 0; /* デフォルトの余白をリセット */
+  }
+  
+  nav li.gnav ul,
+  nav li.gnav ul ul{
+  position: relative;
+  left:0;
+  top:0;
+  width:100%;
+  visibility:visible;/*JSで制御するため一旦表示*/
+  opacity:1;/*JSで制御するため一旦表示*/
+  display: none;/*JSのslidetoggleで表示させるため非表示に*/
+  transition:none;/*JSで制御するためCSSのアニメーションを切る*/
+}
+  
+nav ul li a{
+  border-bottom:1px solid #ccc;
+}
+
+/*矢印の位置と向き*/
+
+nav ul li.gnav::before{
+  left:20px;  
+}
+
+nav ul ul li.gnav::before{
+  transform: rotate(135deg);
+  left:20px;
+}
+    
+nav ul li.gnav.active::before{
+    transform: rotate(-45deg);
+}
+}
+
+
+/*===== レイアウトのためのCSS =====*/
+
+h2{
+  font-size:1.2rem;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+p{
+  margin-top:20px;  
+}
+
+small{
+  background:#333;
+  color:#fff;
+  display: block;
+  text-align: center;
+  padding:20px;
+}
+
+section{
+  padding:30px;
+}
+
+section:nth-child(2n){
+  background:#f3f3f3; 
+}
+a{
+  color: #333;
+  text-decoration: none;
+}
+
+.lead{
+  text-align: center;
+  padding: 50px 20px;
+}
+
+img{
+  width:200px;/* 画像差し替え後100%へ */
+  height:200px;/* 画像差し替え後autoへ */
+}
 
 
 /* ヘッダー */
@@ -28,50 +223,66 @@ header{
   width: auto;
   display: flex;
   align-items: center;
-}
-.header_wrapper h1 a{
-  display: block;
-  color: #333;
-  text-decoration: none;
+  color: #333333;
   font-size: 34px;
 }
+
 .header_wrapper h1 span{
   display: block;
+  padding: 5px;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.5;
-  margin-left: 10px;
-}
-/* ナビゲーション gnav */
-.gnav{
-  width: 100%;
-  background-color: #333;
-}
-.gnav_wrapper{
-  max-width: 980px;
-  margin: auto;
-  display: flex;
-}
-.gnav_wrapper li{
-  border-left: #888 1px solid;
-  text-align: center;
-  width: calc(100%/3);  /* 画面幅３等分 */
-  transition: all  0.3s ease; /* 変化をなめらかに */
-}
-.gnav_wrapper li:last-child{
-  border-right: #888 1px solid;
-}
-.gnav_wrapper li:hover{
-  background-color: #888;
-}
-.gnav_wrapper li a{
-  display: block;
-  padding: 1.3em 0;
-  color: #fff;
-  text-decoration: none;
+  color: #ffffff;
 }
 
-/*　画像の拡大＋テキスト出現 zoomInText　*/
+
+.logo {
+  padding: 1rem 3rem;
+  -webkit-transform: skew(-15deg);
+  transform: skew(-15deg);
+  background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
+  background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
+  background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+}
+
+/*=== 768px以下 wrapper・logo ===*/
+@media screen and (max-width:768px){
+
+  .header_wrapper{
+    max-width: 1320px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: x-small;
+  }
+  .header_wrapper h1{
+    width: auto;
+    display: flex;
+    align-items: center;
+    color: #333333;
+    font-size: 25px;
+  }
+
+  .header_wrapper h1 span{
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .logo {
+    padding: 1rem 3rem;
+    -webkit-transform: skew(-15deg);
+    transform: skew(-15deg);
+    background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
+    background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
+    background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+    font-size: small;
+  }
+}
+
+/*=====　画像の拡大＋テキスト出現 zoomInText　=====*/
 
 .zoomInText{ /* テキストの基点となる位置を定義 */
   position: relative;
@@ -120,57 +331,12 @@ header{
   opacity:1;
 }
 
-
-/*========= レイアウトCSS ===============*/
-
-a{
-  color: #333;
-  text-decoration: none;
-}
-
-.lead{
-  text-align: center;
-  padding: 50px 20px;
-}
-
-/*画像のレスポンシブ*/
-
-img{
-  width:200px;/* 画像差し替え後100%へ */
-  height:200px;/* 画像差し替え後autoへ */
-}
-
-
 /*　横幅　*/
-
 .zoomInText{
   width: 200px;
   margin: 0 auto;/*中央揃え*/
 }
 
-
-h1 {
-  padding: 1rem 3rem;
-  -webkit-transform: skew(-15deg);
-  transform: skew(-15deg);
-  color: #fff;
-  background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
-  background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
-  background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
-}
-
-
-    ul {
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      list-style: none;
-    }
-    li {
-      width: 45%;
-    }
-
-    
  /* 桜を表示するコンテナのスタイル */
  .cherry-blossom-container {
     position: relative;
