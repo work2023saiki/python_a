@@ -3,6 +3,9 @@
 {% block title %} ユーザー登録 {% endblock %}
 
 {% block content %}
+
+<div class="container">
+    <h1>Sign up</h1>
     {% from "forms/_formhelpers.html" import render_field %}   <!--_formhelpers.htmlからインポート-->
     <form method="POST" novalidate>
         {{ form.hidden_tag() }}          
@@ -13,5 +16,5 @@
         <br>
         {{ form.submit() }}
     </form>
-
+</div>
 {% endblock %}

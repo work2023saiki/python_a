@@ -337,6 +337,11 @@ header{
   margin: 0 auto;/*中央揃え*/
 }
 
+/*=== 768px以下 非表示用 no_linkクラス ===*/
+@media screen and (max-width:768px){
+  .no_link{ display:none !important;}
+}
+
  /* 桜を表示するコンテナのスタイル */
  .cherry-blossom-container {
     position: relative;
@@ -385,3 +390,4 @@ header{
       transform: rotate(3000deg);
     }
   }
+
