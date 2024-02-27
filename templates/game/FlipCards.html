@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>FlipCards</title>
     <style>
+       table {
+        margin-left: auto;
+        margin-right: auto;
+      }
       td.card {
         width: 100px;
         height: 140px;
@@ -17,6 +21,13 @@
       td.back {
         background-image: url("{{ url_for('static', filename='../static/images/FlipCards/card.png') }}");
         background-size: 100px 140px;
+      }
+
+      a {
+        border-radius: 50px;
+        color: #333333;
+        background:white;
+        padding: 15px 60px;
       }
 
       p {
