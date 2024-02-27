@@ -29,7 +29,7 @@ def login():
             # 画面遷移
             return redirect(url_for("index"))
         # 失敗
-        flash("認証不備です")
+        flash("ユーザー名またはパスワードが異なります")
 
     # GET
     return render_template('forms/login.html', form=loginform)    #ログイン画面へ
