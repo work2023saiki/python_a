@@ -2,8 +2,9 @@
     <dt>{{ field.label }}{{ field(**kwargs)|safe }}</dt>     <!--（「名前：」などのラベル）-->
     <dd>
        <!--入力欄-->
-    {% if field.errors %}      <!--もしバリデーションエラーが出たら-->
-        <ul style="color: red;">
+    {% if field.errors %}  
+        <!--もしバリデーションエラーが出たら-->
+        <ul class="field-errors">
         {% for error in field.errors %}    <!--エラーの文章を赤く表示する-->
             <li>{{ error }}</li>
         {% endfor %}
