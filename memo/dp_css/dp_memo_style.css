@@ -30,9 +30,9 @@ header{
 
 /*　本体　*/
 body{
-  letter-spacing: 0.1em;　/*文字間*/
-  font-weight: 400;　/*文字の太さthin（100）、normal（400）、bold（700）*/
-  -webkit-font-smoothing: antialiased;　/*Safariできれいに見せる*/
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container{
@@ -62,7 +62,7 @@ body{
 .right {
   width: 50vw;
   margin-bottom:20px;
-  background-image: url(../image/back.png);
+  background-image: url(../dp_image/back.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
