@@ -151,6 +151,10 @@ def yasai():
 def usertable():
     return render_template('usertable.html')
 
+@app.route('/memo')
+def memo():
+    return render_template('memo.html')
+
 if __name__ == '__main__':
     app.run()
     #   app.run(debug=False, host='192.168.1.108', port=50004)

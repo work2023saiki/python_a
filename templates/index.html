@@ -17,7 +17,7 @@
 <!-- ナビゲーション -->
 <nav>
     <ul>
-        <li><a href="#">About</a></li>
+        <li><a href="{{ url_for('memo')}}">Memo</a></li>
         <li class="gnav"><a href="{{ url_for('index')}}">Game</a>
             <ul>
                 <li><a href="{{ url_for('puzzle')}}">15パズル</a></li>
@@ -45,11 +45,11 @@
 <div class="cont">
 <div class="container">
     <div class="item"><!-- 15パズル -->
-        <div class="zoomInText"><a href="{{ url_for('puzzle')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/15puzzle/15.png') }}" alt=""><span class="cap">15パズル</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('puzzle')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/15puzzle/icon.png') }}" alt=""><span class="cap">15パズル</span></span></a></div>
     </div>
 
     <div class="item no_link"><!-- シューティング -->
-        <div class="zoomInText"><a href="{{ url_for('Shooting')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/shooting/ship.png') }}" alt=""><span class="cap">シューティング</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('Shooting')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/shooting/icon.png') }}" alt=""><span class="cap">シューティング</span></span></a></div>
     </div>
 
     <div class="item"><!-- 神経衰弱 -->
@@ -61,27 +61,27 @@
     </div>
 
     <div class="item no_link"><!-- 迷路 -->
-        <div class="zoomInText"><a href="{{ url_for('Dungeon')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Dungeon/arrows.png') }}" alt=""><span class="cap">迷路</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('Dungeon')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Dungeon/icon.png') }}" alt=""><span class="cap">迷路</span></span></a></div>
     </div>
 
     <div class="item no_link"><!-- ブロック -->
-        <div class="zoomInText"><a href="{{ url_for('FunkyBlocks')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Blocks/time0.png') }}" alt=""><span class="cap">ブロック</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('FunkyBlocks')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Blocks/icon.png') }}" alt=""><span class="cap">ブロック</span></span></a></div>
     </div>
 
     <div class="item no_link"><!--　サターンボイジャー -->
-        <div class="zoomInText"><a href="{{ url_for('saturnvoyager')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/SaturnVoyager/scope.png') }}" alt=""><span class="cap">サターンボイジャー</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('saturnvoyager')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/SaturnVoyager/icon.png') }}" alt=""><span class="cap">サターンボイジャー</span></span></a></div>
     </div>
 
     <div class="item no_link"><!-- ジャンパー -->
-        <div class="zoomInText"><a href="{{ url_for('Jumper')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/jumper/stick0.png') }}" alt=""><span class="cap">ジャンパー</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('Jumper')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/jumper/icon.png') }}" alt=""><span class="cap">ジャンパー</span></span></a></div>
     </div>
 
     <div class="item no_link"><!-- 荷物運び -->
-        <div class="zoomInText"><a href="{{ url_for('CarryIt')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/CarryIt/imgWorker.png') }}" alt=""><span class="cap">荷物運び</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('CarryIt')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/CarryIt/icon.png') }}" alt=""><span class="cap">荷物運び</span></span></a></div>
     </div>
 
     <div class="item no_link"><!-- チェイス -->
-        <div class="zoomInText"><a href="{{ url_for('chase')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Chase/chase.png') }}" alt=""><span class="cap">チェイス</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('chase')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Chase/icon.png') }}" alt=""><span class="cap">チェイス</span></span></a></div>
     </div>
 
     <div class="item no_link"><!-- ビリヤード -->
@@ -89,11 +89,11 @@
     </div>
 
     <div class="item no_link"><!-- 卵集め -->
-        <div class="zoomInText"><a href="{{ url_for('EggCatch')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/EggCatch/chick.png') }}" alt=""><span class="cap">卵集め</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('EggCatch')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/EggCatch/icon.png') }}" alt=""><span class="cap">卵集め</span></span></a></div>
     </div>
 
     <div class="item no_link"><!-- 野菜ツムツム-->
-        <div class="zoomInText"><a href="{{ url_for('yasai')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/yasai/yasai0.png') }}" alt=""><span class="cap">ツムツム風</span></span></a></div>
+        <div class="zoomInText"><a href="{{ url_for('yasai')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/yasai/icon.png') }}" alt=""><span class="cap">ツムツム風</span></span></a></div>
     </div>
 </div>
 </div>
