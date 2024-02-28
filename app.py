@@ -7,54 +7,6 @@ import MySQLdb
 
 app = Flask(__name__)
 
-###################################
-# usertable.htmlを作成
-
-# MySQLに接続する
-db2 = MySQLdb.connect(
-    #user="sa", 　　公開サーバー用
-    user="root",
-    #passwd="",　　　公開サーバー用
-    passwd="adminadmin",
-    host="localhost",
-    db="none"
-)
-
-# カーソルを取得する
-cursor = db2.cursor()
-
-cursor.execute("SELECT * FROM users")
-row = cursor.fetchone()
-
-f = open('templates/usertable.html', encoding='utf-8', mode='w')  #'w'はwriteの略で書き込み可にしてる。
-
-#書き込み内容
-f.write('{% extends "base.html" %} \n') # \n:改行
-f.write('{% block content %} \n')
-f.write('<h1>登録ユーザー一覧</h1> \n')
-
-while row is not None:
-    f.write('<p>')
-    f.write(str(row))
-    f.write('</p>')
-    f.write('\n')
-    
-    row = cursor.fetchone()  #次のデータ（行）に移動
-
-f.write('{% endblock %}')
-    
-    
-#ファイル閉じる
-f.close()
-
-# カーソルを閉じる
-cursor.close()
-
-# 接続を閉じる
-db2.close()
-
-##############################
-
 # config.py読み込み
 app.config.from_object("config.Config")
 # データベースとFlaskとの紐づけ
@@ -149,7 +101,43 @@ def yasai():
 
 @app.route('/usertable')
 def usertable():
-    return render_template('usertable.html')
+###################################
+    
+    # MySQLに接続する
+    db2 = MySQLdb.connect(
+        #user="sa", 　　公開サーバー用
+        user="root",
+        #passwd="",　　　公開サーバー用
+        passwd="adminadmin",
+        host="localhost",
+        db="none"
+    )
+
+    # カーソルを取得する
+    cursor = db2.cursor()
+
+    cursor.execute("SELECT * FROM users")
+    row = cursor.fetchone()
+
+    
+    data = []
+    
+    while row is not None:
+        data.append(row)
+        row = cursor.fetchone()  #次のデータ（行）に移動
+    
+    
+    # カーソルを閉じる
+    cursor.close()
+
+    # 接続を閉じる
+    db2.close()
+
+    ##############################
+    #「return render_template(usertable.html)」だとユーザー登録後のユーザー名、パスワードが表示されないため、以下のようにHTMLタグを使用。    
+    return '''<h1>登録ユーザー一覧</h1>
+              <p>{a}</p>
+           '''.format(a=data)
 
 if __name__ == '__main__':
     app.run()
