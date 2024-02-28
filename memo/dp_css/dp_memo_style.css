@@ -1,8 +1,6 @@
-/* ヘッダー */
-header{
-  width: 100%;
-  padding: 10px 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+/* タイトルロゴ */
 .header_wrapper{
   max-width: 1320px;
   margin: auto;
@@ -19,7 +17,7 @@ header{
   font-size: 34px;
 }
 
-.logo {
+.logo{
   padding: 1rem 3rem;
   -webkit-transform: skew(-15deg);
   transform: skew(-15deg);
@@ -37,21 +35,19 @@ body{
 
 .container{
   display: flex;
-  height: calc(100vh + 150px);
 }
 
 .cont{
   margin-bottom:20px;
-  padding:30px;
-  /*background:#f3f3f3;*/ 
+  padding:10px;
+  font-family:'DotGothic16', sans-serif;
 }
 
 .title{
   color: #333333;
   font-weight: bold;
   background-image: linear-gradient(transparent 60%, #68e0cf 0%);
-  /*width: 30%;*/
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .left {
@@ -61,16 +57,16 @@ body{
 
 .right {
   width: 50vw;
-  margin-bottom:20px;
   background-image: url(../dp_image/back.png);
   background-repeat: no-repeat;
   background-size: cover;
+  min-height:100vh;
 }
 
 /* レスポンシブ対応（768px以下） */
 @media screen and (max-width:768px){
 
-  /* ヘッダー */
+  /* タイトルロゴ */
   .header_wrapper{
     max-width: 1320px;
     margin: auto;
@@ -98,13 +94,17 @@ body{
   }
 
   /*　本体　*/
+  .container{
+    flex-direction: column;
+  }
+
   .left {
     width: 100%;
     font-size: 14px;
   }
 
   .right {
-    width: 0vw;
-    height: 150px;
+    width: 100vw;
+    min-height:40vh;
   }
 }
