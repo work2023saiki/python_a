@@ -211,6 +211,9 @@ img{
 header{
   width: 100%;
   padding: 10px 0;
+  background-image: url(../images/15puzzle/black.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .header_wrapper{
   max-width: 1320px;
@@ -235,7 +238,6 @@ header{
   line-height: 1.5;
   color: #ffffff;
 }
-
 
 .logo {
   padding: 1rem 3rem;
