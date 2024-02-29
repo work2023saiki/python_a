@@ -1,26 +1,6 @@
-/*レイアウト*/
-body{
-  letter-spacing: 0.1em;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-}
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
-p{
-  margin-top:20px;
-  padding:30px;
-  background:#f3f3f3; 
-}
-
-span{
-  color: #333333;
-  font-weight: bold;
-}
-
-/* ヘッダー */
-header{
-  width: 100%;
-  padding: 10px 0;
-}
+/* タイトルロゴ */
 .header_wrapper{
   max-width: 1320px;
   margin: auto;
@@ -28,6 +8,7 @@ header{
   align-items: center;
   justify-content: space-between;
 }
+
 .header_wrapper h1{
   width: auto;
   display: flex;
@@ -36,16 +17,7 @@ header{
   font-size: 34px;
 }
 
-.header_wrapper h1 span{
-  display: block;
-  padding: 5px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #ffffff;
-}
-
-.logo {
+.logo{
   padding: 1rem 3rem;
   -webkit-transform: skew(-15deg);
   transform: skew(-15deg);
@@ -54,9 +26,47 @@ header{
   background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
 }
 
-/*=== 768px以下 wrapper・logo ===*/
+/*　本体　*/
+body{
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container{
+  display: flex;
+}
+
+.cont{
+  margin-bottom:20px;
+  padding:10px;
+  font-family:'DotGothic16', sans-serif;
+}
+
+.title{
+  color: #333333;
+  font-weight: bold;
+  background-image: linear-gradient(transparent 60%, #68e0cf 0%);
+  margin: 10px auto;
+}
+
+.left {
+  width: 50vw;
+  text-align: left;
+}
+
+.right {
+  width: 50vw;
+  background-image: url(../images/memo/back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height:100vh;
+}
+
+/* レスポンシブ対応（768px以下） */
 @media screen and (max-width:768px){
 
+  /* タイトルロゴ */
   .header_wrapper{
     max-width: 1320px;
     margin: auto;
@@ -73,12 +83,6 @@ header{
     font-size: 25px;
   }
 
-  .header_wrapper h1 span{
-    display: block;
-    font-size: 10px;
-    font-weight: 500;
-    line-height: 1.5;
-  }
   .logo {
     padding: 1rem 3rem;
     -webkit-transform: skew(-15deg);
@@ -87,5 +91,20 @@ header{
     background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
     background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
     font-size: small;
+  }
+
+  /*　本体　*/
+  .container{
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .right {
+    width: 100vw;
+    min-height:40vh;
   }
 }
