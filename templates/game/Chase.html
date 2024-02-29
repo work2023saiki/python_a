@@ -99,7 +99,7 @@
 
       let ctx; // 描画コンテキスト
       let dots = []; // 餌の配列
-      let life = 600; // 残り時間
+      let life = 3000; // 残り時間
       let timerId = NaN; // タイマー
       let back; // 背景画像
       const mouse = { x: 0, y: 0 }; // マウスの座標
@@ -117,7 +117,7 @@
           dots.push(new Dot(Math.random() * 600, Math.random() * 600, 10));
         }
         back = document.getElementById("back")
-        timerId = setInterval(tick, 50); // タイマー開始
+        timerId = setInterval(tick, 5); // タイマー開始
       };
 
       function tick() {
@@ -152,7 +152,7 @@
     <a href="{{url_for('index')}}">ホーム</a>
     <p>
     マウスでパ○クマンを動かして餌をたくさん食べさせて<br>
-    10秒以内に完食できればクリア！
+    完食できればクリア！
     </p>
   </header>
   <body>
