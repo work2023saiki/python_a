@@ -3,6 +3,7 @@
 {% block title %}Game Site{% endblock %}
 
 {% block header %}
+<div class="header_background">
 <header>
     <div class="header_wrapper">
         <h1 class="logo">
@@ -39,6 +40,7 @@
         <li><a href="{{ url_for('auth.logout')}}">Logout</a></li>
     </ul>
 </nav>
+</div>
 {% endblock %}
 
 {% block content %}
