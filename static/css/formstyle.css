@@ -12,6 +12,13 @@ body {
     text-align: center;
 }
 
+.gamefont {
+    font-family: "Monomaniac One", "Mochiy Pop P One", sans-serif;
+    font-size: large;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 /* ========== エラーのスタイル ========== */
 /* 
   .field-errors: このクラスセレクタは、エラーメッセージのスタイルを定義します。
