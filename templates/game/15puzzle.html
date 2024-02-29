@@ -50,6 +50,9 @@
     <script>
       "use strict";
 
+      const audio1 = new Audio('../static/images/15puzzle/frogPiano.mp3');
+      audio1.play();
+
       const tiles = []; // タイル配列
 
       function init() {
@@ -106,6 +109,6 @@
   </head>
   <body onload="init()"> 
     <table id="table"></table>
-    <audio src="../static/images/15puzzle/かえるのピアノ.mp3" id="bgm"></audio>
+    <audio src="../static/images/15puzzle/frogPiano.mp3" id="bgm"></audio>
   </body>
 </html>
