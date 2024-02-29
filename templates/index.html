@@ -17,7 +17,7 @@
 
 <!-- ナビゲーション -->
 <nav>
-    <ul>
+    <ul class="gamefont">
         <li><a href="{{ url_for('memo')}}">Memo</a></li>
         <li class="gnav"><a href="{{ url_for('index')}}">Game</a>
             <ul>
@@ -48,54 +48,67 @@
 <div class="container">
     <div class="item"><!-- 15パズル -->
         <div class="zoomInText"><a href="{{ url_for('puzzle')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/15puzzle/icon.png') }}" alt=""><span class="cap">15パズル</span></span></a></div>
+        <span class="gamefont">15パズル</span>
     </div>
 
     <div class="item no_link"><!-- シューティング -->
         <div class="zoomInText"><a href="{{ url_for('Shooting')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/shooting/icon.png') }}" alt=""><span class="cap">シューティング</span></span></a></div>
+        <span class="gamefont">シューティング</span>
     </div>
 
     <div class="item"><!-- 神経衰弱 -->
         <div class="zoomInText"><a href="{{ url_for('Cards')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Flipcards/icon.png') }}" alt=""><span class="cap">神経衰弱</span></span></a></div>
+        <span class="gamefont">神経衰弱</span>
     </div>
 
     <div class="item"><!-- オセロ -->
         <div class="zoomInText"><a href="{{ url_for('Reversi')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Reversi/icon.png') }}" alt=""><span class="cap">オセロ</span></span></a></div>
+        <span class="gamefont">オセロ</span>
     </div>
 
     <div class="item no_link"><!-- 迷路 -->
         <div class="zoomInText"><a href="{{ url_for('Dungeon')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Dungeon/icon.png') }}" alt=""><span class="cap">迷路</span></span></a></div>
+        <span class="gamefont">迷路</span>
     </div>
 
     <div class="item no_link"><!-- ブロック -->
         <div class="zoomInText"><a href="{{ url_for('FunkyBlocks')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Blocks/icon.png') }}" alt=""><span class="cap">ブロック</span></span></a></div>
+        <span class="gamefont">ブロック</span>
     </div>
 
     <div class="item no_link"><!--　サターンボイジャー -->
         <div class="zoomInText"><a href="{{ url_for('saturnvoyager')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/SaturnVoyager/icon.png') }}" alt=""><span class="cap">サターンボイジャー</span></span></a></div>
+        <span class="gamefont">サターンボイジャー</span>
     </div>
 
     <div class="item no_link"><!-- ジャンパー -->
         <div class="zoomInText"><a href="{{ url_for('Jumper')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/jumper/icon.png') }}" alt=""><span class="cap">ジャンパー</span></span></a></div>
+        <span class="gamefont">ジャンパー</span> 
     </div>
 
     <div class="item no_link"><!-- 荷物運び -->
         <div class="zoomInText"><a href="{{ url_for('CarryIt')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/CarryIt/icon.png') }}" alt=""><span class="cap">荷物運び</span></span></a></div>
+        <span class="gamefont">荷物運び</span> 
     </div>
 
     <div class="item no_link"><!-- チェイス -->
         <div class="zoomInText"><a href="{{ url_for('chase')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Chase/icon.png') }}" alt=""><span class="cap">チェイス</span></span></a></div>
+        <span class="gamefont">チェイス</span> 
     </div>
 
     <div class="item no_link"><!-- ビリヤード -->
         <div class="zoomInText"><a href="{{ url_for('Billiard')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Billiard/icon.png') }}" alt=""><span class="cap">ビリヤード</span></span></a></div>
+        <span class="gamefont">ビリヤード</span> 
     </div>
 
     <div class="item no_link"><!-- 卵集め -->
         <div class="zoomInText"><a href="{{ url_for('EggCatch')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/EggCatch/icon.png') }}" alt=""><span class="cap">卵集め</span></span></a></div>
+        <span class="gamefont">卵集め</span> 
     </div>
 
     <div class="item no_link"><!-- 野菜ツムツム-->
         <div class="zoomInText"><a href="{{ url_for('yasai')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/yasai/icon.png') }}" alt=""><span class="cap">ツムツム風</span></span></a></div>
+        <span class="gamefont">野菜ツムツム</span> 
     </div>
 </div>
 </div>

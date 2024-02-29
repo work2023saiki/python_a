@@ -10,6 +10,13 @@ body{
   margin: 0 auto;/* 中央寄せ */
 }
 
+.gamefont {
+  font-family: "Monomaniac One", "Mochiy Pop P One", sans-serif;
+  font-size: large;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /*===== 画面の幅が小さければclass指定で折り返す処理 =====*/
 .container {
   display: grid;
