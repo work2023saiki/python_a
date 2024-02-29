@@ -211,9 +211,6 @@ img{
 header{
   width: 100%;
   padding: 10px 0;
-  background-image: url(../images/15puzzle/black.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .header_background{
   width: 100%;
